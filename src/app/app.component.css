@@ -1,0 +1,8 @@
+.frame {
+    position: relative;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 2px solid var(--black);
+    overflow: hidden;
+    inset: 1rem;
+}
