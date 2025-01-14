@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 100dvh;
+    height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -21,17 +21,22 @@ body {
 }
 
 h1 {
-    font-size: 6.854rem;
+    font-size: clamp(3rem, 10dvh, 6.854rem);
 }
 
 h2 {
-    font-size: 4.236rem;
+    font-size: clamp(2rem, 6dvh, 4.236rem);
 }
 
 h3, .subtitle {
-    font-size: 2.618rem;
+    font-size: clamp(1.5rem, 4dvh, 2.618rem);
 }
 
 h4 {
-    font-size: 1.618rem;
+    font-size: clamp(1rem, 2dvh, 1.618rem);
+    color: var(--dark-grey);
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
 }

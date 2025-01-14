@@ -1,0 +1,41 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    margin-inline-end: auto;
+}
+
+ul.langages {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+li.techno {
+    display: inline;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 2px 4px;
+}
+
+.ligne {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.metier {
+    font-weight: bold;
+    width: available;
+}
+
+.dates {
+    color: var(--dark-grey);
+    text-align: right;
+}
