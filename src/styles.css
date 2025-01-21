@@ -3,6 +3,10 @@
     --black: #101920;
     --dark-grey: #63666B;
     --light-grey: #A2AAAD;
+    --blue: #0269C5;
+    --purple: #563D81;
+    --red: #CC0019;
+    --magenta: #A20067;
 }
 
 html, body {
@@ -21,7 +25,7 @@ body {
 }
 
 h1 {
-    font-size: clamp(3rem, 10dvh, 6.854rem);
+    font-size: clamp(3rem, 8dvh, 6.854rem);
 }
 
 h2 {
@@ -29,7 +33,11 @@ h2 {
 }
 
 h3, .subtitle {
-    font-size: clamp(1.5rem, 4dvh, 2.618rem);
+    font-size: clamp(1.3rem, 1dvh, 2.618rem);
+}
+
+p.subtitle {
+    margin: 0;
 }
 
 h4 {
@@ -39,4 +47,20 @@ h4 {
 
 h1, h2, h3, h4 {
     margin: 0;
+}
+
+a:link {
+    color: var(--blue);
+}
+
+a:visited {
+    color: var(--purple);
+}
+
+a:hover {
+    color: var(--magenta);
+}
+
+a:active {
+    color: var(--red);
 }

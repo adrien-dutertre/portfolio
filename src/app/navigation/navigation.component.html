@@ -1,8 +1,8 @@
 <nav>
     <ul>
         <li *ngFor="let link of nav">
-            <a [routerLink]="link.linkRoute">{{ link.label }}</a>
+            <a [routerLink]="link.linkRoute" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{
+                link.label }}</a>
         </li>
     </ul>
 </nav>
-

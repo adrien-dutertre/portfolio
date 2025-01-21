@@ -5,6 +5,17 @@ ul {
     padding: 0;
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+br {
+    content: "";
+    margin: 0.5rem;
+    display: block;
 }
 
 svg {

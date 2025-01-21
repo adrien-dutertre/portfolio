@@ -1,10 +1,10 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
-  imports: [RouterModule, NgFor],
+  imports: [RouterModule, NgFor, RouterLinkActive],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.css'
 })
@@ -21,6 +21,10 @@ export class NavigationComponent {
     {
       label: 'Projets',
       linkRoute: 'projets'
+    },
+    {
+      label: 'Liens',
+      linkRoute: 'liens'
     }
   ];
 }
