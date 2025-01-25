@@ -25,15 +25,15 @@ body {
 }
 
 h1 {
-    font-size: clamp(3rem, 8dvh, 6.854rem);
+    font-size: clamp(1.5rem, 6dvh, 6.854rem);
 }
 
 h2 {
-    font-size: clamp(2rem, 6dvh, 4.236rem);
+    font-size: clamp(1.3rem, 4dvh, 4.236rem);
 }
 
 h3, .subtitle {
-    font-size: clamp(1.3rem, 1dvh, 2.618rem);
+    font-size: clamp(1.15rem, 1dvh, 2.618rem);
 }
 
 p.subtitle {

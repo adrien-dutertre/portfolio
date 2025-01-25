@@ -13,7 +13,13 @@
     align-items: stretch;
 }
 
+app-navigation {
+    flex-grow: 0;
+}
+
 main {
+    min-width: 265px;
+    width: calc(100% - 2rem);
     max-width: 500px;
     align-self: flex-end;
     flex-grow: 1;

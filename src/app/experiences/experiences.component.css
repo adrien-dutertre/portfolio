@@ -23,8 +23,17 @@ li.techno {
     padding: 2px 4px;
 }
 
+li.techno::before {
+    content: "[";
+}
+
+li.techno::after {
+    content: "]";
+}
+
 .ligne {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     gap: 8px;
     margin-top: 16px;
@@ -33,6 +42,10 @@ li.techno {
 .metier {
     font-weight: bold;
     width: available;
+}
+
+.metier, .entreprise {
+    flex-shrink: 0;
 }
 
 .dates {
