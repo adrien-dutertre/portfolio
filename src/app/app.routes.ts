@@ -5,9 +5,9 @@ import { ProjetsComponent } from './projets/projets.component';
 import { LiensComponent } from './liens/liens.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/apropos', pathMatch: 'full' },
   { path: 'apropos', component: AproposComponent },
   { path: 'experiences', component: ExperiencesComponent },
   { path: 'projets', component: ProjetsComponent },
-  { path: 'liens', component: LiensComponent }
+  { path: 'liens', component: LiensComponent },
+  { path: '', redirectTo: '/apropos', pathMatch: 'full' },
 ];
