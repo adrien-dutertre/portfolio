@@ -9,5 +9,5 @@ export const routes: Routes = [
   { path: 'experiences', component: ExperiencesComponent },
   { path: 'projets', component: ProjetsComponent },
   { path: 'liens', component: LiensComponent },
-  { path: '', redirectTo: '/apropos', pathMatch: 'full' },
+  { path: '', redirectTo: 'apropos', pathMatch: 'full' },
 ];
