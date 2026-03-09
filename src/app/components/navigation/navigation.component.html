@@ -1,0 +1,11 @@
+<nav>
+  <h2>Navigation</h2>
+  <ul>
+    @for (page of nav(); track $index) {
+      <li routerLinkActive="active-route" [routerLinkActiveOptions]="{ exact: true }">
+        <a [routerLink]="page.linkRoute">{{
+        page.label }}</a>
+      </li>
+    }
+  </ul>
+</nav>

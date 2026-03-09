@@ -1,0 +1,70 @@
+nav {
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+    position: relative;
+}
+
+nav h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 2px;
+    color: var(--secondary-text);
+    background-color: var(--background);
+    display: inline;
+    position: relative;
+    top: -1rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: -0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+}
+
+nav ul li {
+    padding: 0.25rem;
+    position: relative;
+    max-width: fit-content;
+}
+
+nav ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav ul li::first-letter {
+    text-decoration: underline;
+}
+
+nav ul li.active-route {
+    background-color: var(--selected-backgroud);
+    color: var(--selected-text);
+}
+
+nav ul li.active-route::first-letter {
+    text-decoration: none;
+}
+
+nav ul li.active-route::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1rem;
+    height: 100%;
+    background-color: var(--selected-backgroud);
+    animation: blink 1s ease-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

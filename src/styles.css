@@ -1,12 +1,22 @@
 :root {
-    --white: #F4F4F4;
     --black: #101920;
-    --dark-grey: #63666B;
-    --light-grey: #A2AAAD;
+
     --blue: #0269C5;
     --purple: #563D81;
     --red: #CC0019;
     --magenta: #A20067;
+
+    --white: #F4F4F4;
+    --oxford-blue: #002147;
+    --dark-grey: #63666B;
+    --light-grey: #A2AAAD;
+
+    --border: var(--oxford-blue);
+    --text: var(--oxford-blue);
+    --secondary-text: var(--dark-grey);
+    --background: var(--white);
+    --selected-backgroud: var(--oxford-blue);
+    --selected-text: var(--white); 
 }
 
 html, body {
@@ -17,11 +27,11 @@ html, body {
 }
 
 body {
-    font-family: "PT Mono", monospace;
+    font-family: "Courrier", monospace;
     font-weight: 400;
     font-style: normal;
-    color: var(--black);
-    background-color: var(--white);
+    color: var(--text);
+    background-color: var(--background);
 }
 
 h1 {

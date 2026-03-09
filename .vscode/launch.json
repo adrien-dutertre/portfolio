@@ -3,11 +3,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
+      "name": "Debug Chromium in Ubuntu",
       "type": "chrome",
       "request": "launch",
-      "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "runtimeExecutable": "/snap/bin/chromium",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--user-data-dir=${workspaceFolder}/.vscode/chromium"
+      ],
+      "port": 9222,
+      "url": "http://localhost:4200/",
+      "webRoot": "${workspaceFolder}"
     },
     {
       "name": "ng test",
