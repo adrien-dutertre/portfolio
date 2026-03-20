@@ -1,0 +1,3 @@
+<button (click)="setMode()" [disabled]="lightTheme()" aria-label="Changer le thème à clair" class="px-1 cursor-pointer">Clair</button>
+<span class="p-1">|</span>
+<button (click)="setMode()" [disabled]="!lightTheme()" aria-label="Changer le thème à sombre" class="px-1 cursor-pointer">Sombre</button>

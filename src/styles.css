@@ -1,76 +1,147 @@
-:root {
-    --black: #101920;
+@import "tailwindcss";
 
-    --blue: #0269C5;
-    --purple: #563D81;
-    --red: #CC0019;
-    --magenta: #A20067;
+@custom-variant dark (&:where(.dark, .dark *));
 
-    --white: #F4F4F4;
-    --oxford-blue: #002147;
-    --dark-grey: #63666B;
-    --light-grey: #A2AAAD;
+@theme {
+  --color-blue: #0269c5;
+  --color-purple: #563d81;
+  --color-red: #cc0019;
+  --color-magenta: #a20067;
 
-    --border: var(--oxford-blue);
-    --text: var(--oxford-blue);
-    --secondary-text: var(--dark-grey);
-    --background: var(--white);
-    --selected-backgroud: var(--oxford-blue);
-    --selected-text: var(--white); 
+  --color-light-blue: #92C2EA;
+  --color-light-purple: #00BCE1;
+  --color-light-red: #FF6879;
+  --color-light-magenta: #F1A7DC;
+
+  --color-white: #f4f4f4;
+  --color-oxford-blue: #002147;
+  --color-dark-grey: #63666b;
+  --color-light-grey: #a2aaad;
+
+  --color-skill: #B8DCD2;
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: "Courrier", monospace;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--text);
-    background-color: var(--background);
+  font-family: "Courier New", Courier, monospace;
+  font-size: medium;
+  font-style: normal;
+  padding: 1rem 1rem 0 1rem;
+  color: theme(--color-oxford-blue);
+  background-color: theme(--color-white);
+  display: grid;
+  grid-template-rows: auto;
+
+  @variant dark {
+    color: theme(--color-white);
+    background-color: theme(--color-oxford-blue);
+  }
 }
 
-h1 {
-    font-size: clamp(1.5rem, 6dvh, 6.854rem);
+h3 {
+  text-transform: uppercase;
+  padding-block-start: 1rem;
+  font-weight: bold;
+  @apply text-dark-grey dark:text-light-grey;
 }
 
-h2 {
-    font-size: clamp(1.3rem, 4dvh, 4.236rem);
+h3::before {
+  content: "**";
+  padding-inline-end: 0.5rem;
+  @apply text-dark-grey dark:text-light-grey;
 }
 
-h3, .subtitle {
-    font-size: clamp(1.15rem, 1dvh, 2.618rem);
+h3::after {
+  content: "**";
+  padding-inline-start: 0.5rem;
+  @apply text-dark-grey dark:text-light-grey;
 }
 
-p.subtitle {
-    margin: 0;
-}
-
-h4 {
-    font-size: clamp(1rem, 2dvh, 1.618rem);
-    color: var(--dark-grey);
-}
-
-h1, h2, h3, h4 {
-    margin: 0;
+a {
+  text-decoration: underline;
 }
 
 a:link {
-    color: var(--blue);
+  color: theme(--color-blue);
+  @variant dark {
+    color: theme(--color-light-blue);
+  }
 }
 
 a:visited {
-    color: var(--purple);
+  color: theme(--color-purple);
+  @variant dark {
+    color: theme(--color-light-purple);
+  }
 }
 
 a:hover {
-    color: var(--magenta);
+  color: theme(--color-magenta);
+  @variant dark {
+    color: theme(--color-light-magenta);
+  }
 }
 
 a:active {
-    color: var(--red);
+  color: theme(--color-red);
+  @variant dark {
+    color: theme(--color-light-red);
+  }
+}
+
+@layer components {
+  fieldset.frame {
+    padding: 0.5rem;
+    border: 1px solid theme(--color-oxford-blue);
+    @variant dark {
+      border: 1px solid theme(--color-white);
+    }
+
+    & legend {
+      font-weight: bold;
+      color: theme(--color-dark-grey);
+      @variant dark {
+        color: theme(--color-light-grey);
+      }
+    }
+  }
+
+  .skill {
+    @apply p-1;
+    background-color: theme(--color-skill);
+    color: theme(--color-oxford-blue);
+    @variant dark {
+      color: theme(--color-oxford-blue);
+    }
+  }
+
+  .skill::before {
+    content: "[";
+  }
+
+  .skill::after {
+    content: "]";
+  }
+
+  ul.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  ul.skills li:not(:last-of-type)::after {
+    content: ",";
+    @apply text-dark-grey dark:text-light-grey;
+  }
+
+  ul.skills li:last-of-type:not(:first-of-type)::before {
+    content: "\00a0 et\00a0";
+    @apply text-dark-grey dark:text-light-grey;
+  }
 }

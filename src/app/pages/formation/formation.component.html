@@ -1,0 +1,23 @@
+<fieldset class="frame h-full w-full overflow-y-auto">
+    <legend>
+        <h2>Formation</h2>
+    </legend>
+    <ul class="flex flex-col gap-4">
+        @for (education of educations; track $index) {
+        <li class="flex flex-col">
+            <div class="flex flex-col lg:flex-row lg:justify-between">
+                <div class="education">{{ education.school }}</div>
+                <div class="education-dates">{{ education.startDate }} ‒ {{ education.endDate }}</div>
+            </div>
+            @if (education.diploma; as diploma) {
+                <div>{{ diploma }}</div>
+            }
+            <ul class="skills">
+                @for (skill of education.skills.masteredSkills; track $index) {
+                    <li><span class="skill">{{ skill }}</span></li>
+                }
+            </ul>
+        </li>
+        }
+    </ul>
+</fieldset>

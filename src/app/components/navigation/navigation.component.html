@@ -1,11 +1,28 @@
 <nav>
-  <h2>Navigation</h2>
-  <ul>
-    @for (page of nav(); track $index) {
-      <li routerLinkActive="active-route" [routerLinkActiveOptions]="{ exact: true }">
-        <a [routerLink]="page.linkRoute">{{
-        page.label }}</a>
+  <fieldset class="frame max-lg:hidden">
+    <legend>Navigation</legend>
+    <ul class="m-0 p-0 flex flex-col gap-0 list-none">
+      @for (page of nav(); track $index) {
+      <li routerLinkActive="active-route" [routerLinkActiveOptions]="{ exact: true }"
+        class="p-1 relative max-w-fit *:no-underline! first-letter:underline! *:text-oxford-blue! dark:*:text-white! [.active-route]:no-underline! [.active-route]:bg-oxford-blue [.active-route]:dark:bg-white [.active-route]:first-letter:no-underline! [.active-route]:*:text-white! dark:[.active-route]:*:text-oxford-blue! [.active-route]:after:bg-oxford-blue dark:[.active-route]:after:bg-white">
+        <a [routerLink]="page.linkRoute" ariaCurrentWhenActive="page">{{ page.label }}</a>
       </li>
-    }
-  </ul>
+      }
+    </ul>
+  </fieldset>
+  <details class="lg:hidden border border-oxford-blue dark:border-white p-2">
+    <summary class="font-bold text-dark-grey dark:text-light-grey cursor-pointer">Navigation</summary>
+    <ul class="m-0 p-0 flex flex-col gap-0 list-none border-b border-oxford-blue mb-2">
+      @for (page of nav(); track $index) {
+      <li routerLinkActive="active-route" [routerLinkActiveOptions]="{ exact: true }"
+        class="p-1 relative max-w-fit *:no-underline! first-letter:underline! *:text-oxford-blue! dark:*:text-white! [.active-route]:no-underline! [.active-route]:bg-oxford-blue [.active-route]:dark:bg-white [.active-route]:first-letter:no-underline! [.active-route]:*:text-white! dark:[.active-route]:*:text-oxford-blue! [.active-route]:after:bg-oxford-blue dark:[.active-route]:after:bg-white">
+        <a [routerLink]="page.linkRoute" ariaCurrentWhenActive="page">{{ page.label }}</a>
+      </li>
+      }
+    </ul>
+    <div class="lg:hidden flex flex-row">
+      <span class="p-1">Thème :</span>
+      <app-theme-mode></app-theme-mode>
+    </div>
+  </details>
 </nav>

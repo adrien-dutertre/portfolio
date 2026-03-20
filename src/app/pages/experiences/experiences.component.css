@@ -1,54 +1,81 @@
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+@reference "../../../styles.css";
+
+th {
+    font-weight: 400;
+    text-align: start;
+    text-transform: uppercase;
+    color: theme(--color-dark-grey);
+    @variant dark {
+        color: theme(--color-light-grey);
+    }
 }
 
-.left {
-    margin-inline-end: auto;
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-ul.langages {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
+td:not(:last-of-type) {
+    padding-inline-end: 0.5rem;
+} 
+
+td.secondary {
+    color: theme(--color-dark-grey);
+    @variant dark {
+        color: theme(--color-light-grey);
+    }
 }
 
-li.techno {
-    display: inline;
-    color: var(--white);
-    background-color: var(--black);
-    padding: 2px 4px;
+tr:not([id^="experience-detail-"]):hover td {
+    background-color: theme(--color-oxford-blue);
+    color: theme(--color-white);
+    @variant dark {
+        background-color: theme(--color-white);
+        color: theme(--color-oxford-blue);
+    }
 }
 
-li.techno::before {
-    content: "[";
+tr:hover td.secondary {
+    color: theme(--color-light-grey);
+    @variant dark {
+        color: theme(--color-dark-grey);
+    }
 }
 
-li.techno::after {
-    content: "]";
+tr[id^="experience-detail-"] {
+    display: none;
+    border-bottom: 1px solid theme(--color-oxford-blue);
+    @variant dark {
+        border-bottom: 1px solid theme(--color-white);
+    }
+
+    & td {
+        padding-bottom: 0.5rem;
+    }
 }
 
-.ligne {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 8px;
-    margin-top: 16px;
+p {
+    max-width: 80ch;
 }
 
-.metier {
-    font-weight: bold;
-    width: available;
+tr:has(input[type="checkbox"]:checked) + tr {
+    display: table-row;
 }
 
-.metier, .entreprise {
-    flex-shrink: 0;
+input[type="checkbox"] + label:after {
+    content:'+';
+    padding-inline: 1rem;
 }
 
-.dates {
-    color: var(--dark-grey);
-    text-align: right;
+input[type="checkbox"]:checked + label:after {
+    content:'-';
+    padding-inline: 1rem;
+}
+
+input[type="checkbox"]:focus + label {
+    outline: 2px solid theme(--color-light-grey);
+    @variant dark {
+        outline-color: theme(--color-dark-grey);
+    }
 }

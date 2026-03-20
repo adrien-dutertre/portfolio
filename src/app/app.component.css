@@ -1,0 +1,14 @@
+@reference "../styles.css";
+
+:host {
+    height: 100%;
+    overflow: hidden;
+}
+
+#short-desc dt {
+    width: 6rem;
+    color: theme(--color-dark-grey);
+    @variant dark {
+        color: theme(--color-light-grey);
+    }
+}

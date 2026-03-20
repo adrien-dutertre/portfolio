@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ExperiencesService } from '../../services/experiences.service';
 
 @Component({
   selector: 'app-experiences',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './experiences.component.css'
 })
 export class ExperiencesComponent {
-
+  readonly experiences = inject(ExperiencesService).experiences;
 }

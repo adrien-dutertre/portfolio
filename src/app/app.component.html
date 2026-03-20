@@ -1,10 +1,55 @@
-<div class="container">
-    <div class="frame">
-        <h1>Adrien Dutertre</h1>
-        <p class="subtitle">Développeur Front-End</p>
-        <app-navigation></app-navigation>
-        <main> 
+<div class="p-2 grid lg:grid-rows-[1fr_calc(100%-11rem)] grid-rows-[3rem_calc(100%-3rem)] border-2 border-solid border-oxford-blue dark:border-white h-[calc(100%-1.5rem)] overflow-hidden content-start">
+    <header class="flex flex-row gap-4 flex-none">
+        <div class="max-lg:hidden">
+            <h1><span class="font-bold">> </span>portfolio</h1>
+            <pre class="text-dark-grey dark:text-light-grey">
+.++-+##-.       ..+#++#+ 
+--      .-+...-+.      --
++.        -- .-        .+
++.        -- .-        .+
+--      .+-...+-.      --
+ -#++#+..       .-+#--++</pre>
+        </div>
+        <div id="short-desc" class="self-end">
+            <dl>
+                <div class="flex">
+                    <dt class="max-lg:hidden">Qui&nbsp;?</dt>
+                    <dd class="max-lg:font-bold">Adrien Dutertre</dd>
+                </div>
+                <div class="flex">
+                    <dt class="max-lg:hidden">Quoi&nbsp;?</dt>
+                    <dd>Développeur front-end Angular</dd>
+                </div>
+                <div class="max-lg:hidden flex">
+                    <dt>Comment&nbsp;?</dt>
+                    <dd>
+                        <ul class="skills flex flex-row flex-wrap">
+                            <li><span class="skill">Angular</span></li>
+                            <li><span class="skill">Typescript</span></li>
+                            <li><span class="skill">HTML</span></li>
+                            <li><span class="skill">CSS</span></li>
+                            <li><span class="skill">UX&nbsp;Design</span></li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="max-lg:hidden flex">
+                    <dt>Où&nbsp;?</dt>
+                    <dd>Lyon</dd>
+                </div>
+            </dl>
+        </div>
+        <fieldset class="frame flex flex-row align-middle h-fit ml-auto max-lg:hidden">
+            <legend class="first-letter:underline">Thème</legend>
+            <app-theme-mode class="ml-auto max-lg:hidden"></app-theme-mode>
+        </fieldset>
+    </header>
+    <div class="flex max-lg:flex-col gap-2">
+        <app-navigation class="lg:w-[20%]"></app-navigation>
+        <main class="w-full self-stretch overflow-hidden">
             <router-outlet></router-outlet>
         </main>
     </div>
 </div>
+<footer class="text-dark-grey dark:text-light-grey h-4">
+    <span class="max-lg:hidden">Conçu et développé par </span><span class="font-sans">&copy;</span>Adrien Dutertre | <time datetime="2026">2026</time>
+</footer>

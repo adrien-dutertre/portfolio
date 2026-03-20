@@ -1,0 +1,11 @@
+@reference "../../../styles.css";
+
+:host {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+button:disabled {
+    @apply text-white bg-oxford-blue dark:text-oxford-blue dark:bg-white cursor-auto;
+}

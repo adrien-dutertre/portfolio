@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Page } from './page';
+import { Page } from './page.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +17,10 @@ export class NavigationService {
     {
       label: 'Projets',
       linkRoute: 'projets'
+    },
+    {
+      label: 'Formation',
+      linkRoute: 'formation'
     },
     {
       label: 'Liens',
