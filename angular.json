@@ -14,7 +14,10 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/portfolio",
-            "index": "src/index.html",
+            "index": {
+              "input": "src/index.html",
+              "output": "index.html"
+            },
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -97,10 +100,13 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-  "options": {
-    "baseHref": "https://adrien-dutertre.github.io/portfolio/",
-    "dir": "dist/portfolio/browser/"
-  }
+          "options": {
+            "baseHref": "/portfolio/",
+            "repo": "https://github.com/adrien-dutertre/portfolio.git",
+            "dir": "dist/portfolio/browser/",
+            "name": "Adrien Dutertre",
+            "email": "dutertre.adrien@pm.me"
+          }
         }
       }
     }
