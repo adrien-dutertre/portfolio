@@ -25,7 +25,7 @@
             <tr [id]="'experience-detail-' + $index">
                 <td colspan="4">
                     <h3>Description</h3>
-                    <p class="max-w-[80ch]">{{ experience.description }}</p>
+                    <p class="max-w-[80ch] text-wrap">{{ experience.description }}</p>
                     <h3>Outils principaux</h3>
                     <ul class="skills">
                         @for (skill of experience.skills.masteredSkills; track $index) {
